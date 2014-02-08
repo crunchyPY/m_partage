@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 # -*-coding:utf-8-*-
-# m_partage1.3-hl
+# m_partage1.3
 
 import pygtk
 pygtk.require("2.0")
@@ -90,7 +90,6 @@ class Main():
 			gtk.main_quit()
 			
 	def evnmt_delete(self, widget, evenement, donnees=None):
-		'''empeche la fermeture de la fenetre au clique sur la croix'''
 		Systray(widget, 300)
 		widget.hide ()
 		return True	
