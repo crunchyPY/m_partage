@@ -4,7 +4,7 @@
 
 import pygtk
 pygtk.require("2.0")
-import gtk, subprocess, threading, gobject, os, sys
+import gtk, subprocess, threading, gobject, os
 import SimpleHTTPServer, SocketServer
 from os import chdir
 
