@@ -7,7 +7,7 @@ Partage facile, glisser deposer pour partager un dossier ou un fichier sur inter
 
 Info :
 http://shovel-crew.org/index.php?article18/partage-de-fichiers-facile
-
+Info:
 http://handylinux.org/documentation/doku.php/partager#partage_magique
 
 Download paquet debian :
