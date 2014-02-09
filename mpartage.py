@@ -83,7 +83,7 @@ class Main():
 			httpd.shutdown()
 			gtk.main_quit()
 		if boutonValidation.get_active() and typePartage.get_active() == True:
-			#le bouton garder le partage actif est pas actif on cache la fenetre
+			#le bouton garder le partage actif est  actif on cache la fenetre
 			window.hide ()
 			Systray(window, 300)	
 		else:
