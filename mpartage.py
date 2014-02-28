@@ -59,7 +59,7 @@ class Main():
 	    return True
 	    
 	def got_data_cb(self, wid, context, x, y, data, info, time):
-		'''Le dossier est déposé dans la fenetre,  deposer'''
+		'''Le dossier est depose dans la fenetre,  deposer'''
 		emplacement = data.get_uris()[0].split('file://')[1]
 		emplacement = self.m_decode(emplacement)
 		try:	
@@ -76,7 +76,7 @@ class Main():
 		context.finish(True, False, time)
 		
 	def quitter(self, widget, boutonValidation, typePartage, window):
-		'''On recupére la valeur des boutons pour s'avoir comment quitter'''
+		'''On recupere la valeur des boutons pour s avoir comment quitter'''
 		if boutonValidation.get_active() and typePartage.get_active() == False:
 			for fichier in listNettoyage:
 				os.remove(fichier)
@@ -95,7 +95,7 @@ class Main():
 		return True	
 					
 	def partage(self, widget, boutonValidation):
-		'''si le bouton Activer le partage est active on démarre le serveur sinon on le coupe'''
+		'''si le bouton Activer le partage est active on demarre le serveur sinon on le coupe'''
 		if widget.get_active():
 			serveur =  Serveur_thread()
 			serveur.start()	
@@ -111,14 +111,14 @@ class Main():
 		'''Parce que les accents c'est MAL'''
 		dic_encodage = {'%C3%A0':'à',  '%C3%A1':'á', '%C3%A2':'â', '%C3%A7':'ç', '%C3%A8':'è', '%C3%A9':'é',
 		                '%C3%AA':'ê', '%C3%AB':'ë', '%C3%AE':'î', '%C3%AF':'ï', '%C3%B1':'ñ', '%C3%B2':'ò',
-		                '%C3%B3':'ó', '%C3%B4':'ô'} # ça suffit 
+		                '%C3%B3':'ó', '%C3%B4':'ô'} # ca suffit 
 		for cle, valeur in dic_encodage.items():
 			if cle in emplacement:
 				emplacement = emplacement.replace(str(cle), str(valeur))
 		return emplacement
 		
 	def creation_page(self, emplacement):
-		'''Fonction qui recupére les fichiers et dossier a partager et créer la page html'''
+		'''Fonction qui recupere les fichiers et dossier a partager et creer la page html'''
 		liste_images, list_dossiers, list_doc, list_download, list_multimedia = [], [], [], [], []
 		liste_fichiers = os.listdir(os.getcwd())
 		indexHtml = open(os.getcwd()+"/index.html", 'w')
@@ -128,7 +128,7 @@ class Main():
 			if os.path.isdir(fichier) == True:
 				list_dossiers.append(fichier)
 				chdir(fichier)
-				self.creation_page(emplacement)# Rappel de la fonction pour créer page dans les sous dossiers
+				self.creation_page(emplacement)# Rappel de la fonction pour creer page dans les sous dossiers
 			if os.path.splitext(fichier)[1].lower() in ['.jpg', '.png', '.gif', '.jpeg', '.xcf', '.bmp', '.xpm', '.psd', '.psp', '.tif', '.tiff', '.ai', '.aac', '.ico', '.ppm', '.xbm']:
 				liste_images.append(fichier)
 			if os.path.splitext(fichier)[1].lower() in  ['.mp3', '.flv', '.mp4', '.m4v', '.mpg', '.mpeg', '.m4a', '.wma', '.mov', '.avi', '.mkv', '.ogg', '.ogv', '.ogm', '.wmv', '.wav', '.mid', '.ac3', '.aif', '.aifc', '.aiff', '.divx', '.flac', '.m3u', '.ra', '.rv', '.vob']:
