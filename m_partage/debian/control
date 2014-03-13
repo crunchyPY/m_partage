@@ -1,0 +1,9 @@
+Package: mpartage
+Version: 1.3
+Section: base
+Installed-Size: 80
+Priority: optional
+Architecture: all
+Maintainer: manon
+Description: mpartage le partage facile
+Homepage: http://shovel-crew.org/index.php?article18/partage-de-fichiers-facile
