@@ -1,0 +1,2 @@
+#!/bin/bash 
+echo "Le paquet m_partage a été installé avec succès" 
